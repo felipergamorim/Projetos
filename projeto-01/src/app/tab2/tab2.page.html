@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Tab Two
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <ion-label stacked>Nome</ion-label>
+    <ion-input type="text" [(ngModel)]="nome"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-button block (click)="save()">Salvar</ion-button>
+  </ion-item>
+  <ion-item-sliding *ngFor="let l of lista; let i = index">
+    <ion-item>{{l}}</ion-item>
+    <ion-item-options side="end">
+      <ion-button color="danger" (click)="remove(i)">
+        <ion-icon name="trash"></ion-icon>
+        Excluir
+      </ion-button>
+    </ion-item-options>
+  </ion-item-sliding>
+</ion-content>
